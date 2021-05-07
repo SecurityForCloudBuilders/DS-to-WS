@@ -45,7 +45,7 @@ Teste a conexão para o Cloud One - Workload Security
 <details>
   <summary>:heart: MIGRAÇÃO DO(S) CONECTOR(ES) </summary>
 
-## Connector Migration
+## Migração dos Conectores
 
 Identifique Cloud Connectors e VMware (AWS, Azure e/ou GCP) para serem migrados. Embora o inventário e a configuração possam ser recuperados programaticamente, 
 credenciais não podem. No caso de grandes volumes de conectores a serem migrados, avalie e discuta as possibilidades de automação.
@@ -88,7 +88,7 @@ Os clientes podem exigir a segmentação dos sistemas para gerenciar o inventár
 <details>
   <summary>:heart: CONFIGURAÇÃO DO PROXY </summary>
 
-## Proxy configuration
+## Configuração do Proxy
 
 A configuração das comunicações de proxy para atualizar os Agents, Appliances, e Relays, quando necessário, é definida em Configurações de sistemas do Deep Security Manager ou na console do Workload Security. Essas configurações devem ser migradas antes da migração da(s) política(s) para que as referências fiquem intactas.
 
@@ -113,7 +113,7 @@ As Security Policies serão migradas do Deep Security para o Workload Security. 
 
 ### Migração Manual
 
-If the total number of policies is small or highly reused, it may be appropriate to manually recreate that number of policies and associated objects. This may also be desirable in the event that policy consolidation or reorganization is required to execute a manual migration. This section will detail configuration items to be reviewed and migrated:
+Esta seção irá detalhar algumas observações em itens de configuração a serem revisados ​​e migrados:
 
 ### Objects:
 
@@ -215,15 +215,15 @@ O Deep Security e o Workload Security têm várias configurações adicionais e 
 
 Dado que o Workload Security é entregue como uma plataforma SaaS, será necessária conectividade da sua infraestrutura para os sistemas da Trend Micro.
 
-Esta seção se concentrará especificamente na conectividade do agente e não abordará os requisitos do navegador para a console de gerenciamento. Detalhes adicionais sobre as configurações de proxy podem ser encontrados <a href="https://cloudone.trendmicro.com/docs/workload-security/proxy-set-up/"> aqui </a>. 
+Esta seção se concentrará especificamente na conectividade do agente e não abordará os requisitos do navegador para a console de gerenciamento. Detalhes adicionais sobre as configurações de proxy podem ser encontrados <a href="https://cloudone.trendmicro.com/docs/workload-security/proxy-set-up/"> aqui. </a>
 
 ### Lista de permissões de URL na saída (proxy ou outro Network Edge Device)
 
 Todos os agentes exigirão, no mínimo, acesso aos seguintes URLs e portas 
 
-•	agents.deepsecurity.trendmicro.com:443 
-•	app.deepsecurity.trendmicro.com:443 
-•	relay.deepsecurity.trendmicro.com:443 
+- agents.deepsecurity.trendmicro.com:443 
+- app.deepsecurity.trendmicro.com:443 
+- relay.deepsecurity.trendmicro.com:443 
 
 
 URLs adicionais podem ser necessários para recursos opcionais, incluindo Smart Scan, File Reputation e Web Reputation. A documentação completa de URLs e portas pode ser encontrada <a href="https://cloudone.trendmicro.com/docs/workload-security/communication-ports-urls-ip/"> aqui. </a>
