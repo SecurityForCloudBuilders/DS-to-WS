@@ -6,7 +6,7 @@
 <br />
 
 <details>
-  <summary>:heart: CRIAÇÃO DA NOVA CONSOLE DO CLOUD ONE: WORKLOAD SECURITY </summary>
+  <summary>:smile: CRIAÇÃO DA NOVA CONSOLE DO CLOUD ONE: WORKLOAD SECURITY </summary>
 
 <br />
 
@@ -68,7 +68,7 @@ credenciais não podem. No caso de grandes volumes de conectores a serem migrado
 <hr />
 
 <details>
-  <summary>:heart: MIGRAÇÃO DO(S) GRUPO(S) </summary>
+  <summary>:vulcan_salute: MIGRAÇÃO DO(S) GRUPO(S) </summary>
 
 ## Migração dos Computer Groups 
 
@@ -86,7 +86,7 @@ Os clientes podem exigir a segmentação dos sistemas para gerenciar o inventár
 <hr />
 
 <details>
-  <summary>:heart: CONFIGURAÇÃO DO PROXY </summary>
+  <summary>:ok_hand: CONFIGURAÇÃO DO PROXY </summary>
 
 ## Configuração do Proxy
 
@@ -103,7 +103,7 @@ A configuração das comunicações de proxy para atualizar os Agents, Appliance
 <hr />
 
 <details>
-  <summary>:heart: MIGRAÇÃO DA(S) POLITICA(S) </summary>
+  <summary>:trophy: MIGRAÇÃO DA(S) POLITICA(S) </summary>
 
 ## Migração das Politicas
 
@@ -175,7 +175,7 @@ a.	Anti-Malware Module configurations
 <hr />
 
 <details>
-  <summary>:heart: MIGRAÇÃO DO(S) USUÁRIO(S) E ROLES </summary>
+  <summary>:medal_sports: MIGRAÇÃO DO(S) USUÁRIO(S) E ROLES </summary>
 
 ## Migração de Usários e Roles  
 
@@ -191,7 +191,7 @@ As roles devem ser criadas antes dos usuários para que uma role possa ser atrib
 <hr />
 
 <details>
-  <summary>:heart: CONFIGURAÇÕES ADICIONAIS </summary>
+  <summary>:eyeglasses: CONFIGURAÇÕES ADICIONAIS </summary>
 
 ## Configurações Adicionais
 
@@ -209,7 +209,7 @@ O Deep Security e o Workload Security têm várias configurações adicionais e 
 <hr />
 
 <details>
-  <summary>:heart: AVALIAÇÃO E CONFIGURAÇÃO DE REDE </summary>
+  <summary>:dart: AVALIAÇÃO E CONFIGURAÇÃO DE REDE </summary>
 
 ## Avaliaçao e Configuraçao de Rede
 
@@ -234,7 +234,7 @@ URLs adicionais podem ser necessários para recursos opcionais, incluindo Smart 
 <hr />
 
 <details>
-  <summary>:heart: CONFIGURAÇÃO DE RELAY(S) </summary>
+  <summary>:coffee: CONFIGURAÇÃO DE RELAY(S) </summary>
 
 ## Configuração de Relay(s)
 
@@ -248,7 +248,7 @@ E é possível replicar a infraestrutura de relay(s) existente e a topologia par
 <hr />
 
 <details>
-  <summary>:heart: TESTE DO AGENTE </summary>
+  <summary>:checkered_flag: TESTE DO AGENTE </summary>
 
 ## Teste do Agente  
 
@@ -263,36 +263,46 @@ O teste deve ser focado na validação da migração:
 
 ### Validação da reativação do Agente 
 
-1.	Verify agent is available in Workload Security Computers page 
-2.	Verify output of script in [Appendix 1 item B] matches expected url 
+1.  Verifique se o agente está disponível na aba Computers no Workload Security 
+2.	Verifique se a saída do comando no [Apêndice 1 item B] corresponde a URL esperada
 
 ### Validação da atribuição da Security Policy  
 
-1.	Verify Workload Security shows correct policy assigned in console 
-2.	Verify output of script in [Appendix 1 item C] matches expected Security Policy name 
+1.	Verifique se o Workload Security mostra a política correta atribuída na console
+2.	Verifique se a saída do comando no [Apêndice 1 item C] corresponde ao nome da Security Policy esperada
 
 
 ## Apêndice 1 
 
-This appendix will detail additional references including scripts and other configuration guidance as necessary. 
+Este apêndice detalha referências adicionais, incluindo scripts e outras orientações de configuração, use conforme julgue necessário. 
 
 ### Item A 
 
-This script is designed to facilitate automation for migrating the agent. At a high level, it will: 
+Este script foi projetado para facilitar a automação para a migração do agente. Em um alto nível, ele irá:
 
-1.	Deactivate the current agent installation 
-2.	Reactivate the agent against Workload Security with new configuration 
+1.	Desativar a instalação atual do agente
+2.	Reativar o agente no Workload Security com nova configuração
 
-This is an example script. Details scripts will be built with details from the Workload Security console for each computer group / security policy / network location. 
+Este é um Script de exemplo. Os scripts com mais detalhes serão criados pela console do Workload Security para cada grupo de computador / Security Policy / local de rede.
 
 Some details, such as security policy id or name, if migrated 1:1 from the Deep Security implementation, may be scripted into the new activation commands to reduce the number of script variations required across the environment. 
 
-/opt/ds_agent/dsa_control -r 
-sleep 30 
+Alguns detalhes, como name ou id da Security Policy, são opcionais e podem ser inseridos nos novos comandos de ativação para reduzir o número de variações de script necessárias em todo o ambiente.
+
+<strong> Outras configurações, como Proxy e Relay devem ser só usadas se estão implementadas no ambiente. </strong>
+
+/opt/ds_agent/dsa_control -r
+
+sleep 30
+
 PROXY_ADDR_PORT='1.2.3.4:3128' 
+
 RELAY_PROXY_ADDR_PORT='1.2.3.4:3128' 
+
 /opt/ds_agent/dsa_control -x dsm_proxy://$PROXY_ADDR_PORT/ 
+
 /opt/ds_agent/dsa_control -y relay_proxy://$RELAY_PROXY_ADDR_PORT/ 
+
 /opt/ds_agent/dsa_control -a dsm://agents.deepsecurity.trendmicro.com:443/ "tenantID:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" "token: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx " "policyid:1" "policyname:mypolicy" "groupid:12345" 
 
 ### Para recuperar o nome da Security Policy: 
@@ -302,23 +312,23 @@ RELAY_PROXY_ADDR_PORT='1.2.3.4:3128'
 
 ### Item B 
 
-This command will output the url of the DSM to which the agent is currently registered. Use it to validate that an agent has been reactivated to Workload Security correctly. The expected dsmUrl is https://agents.deepsecurity.trendmicro.com:443/ 
+Este comando produzirá a url da DSM no qual o agente está registrado atualmente. Use-o para validar se um agente foi reativado para o Workload Security corretamente. O dsmUrl esperado é https://agents.deepsecurity.trendmicro.com:443/ 
 
 /opt/ds_agent/dsa_query --cmd GetAgentStatus | grep dsmUrl 
 
 ### Item C 
 
-This command will return the name and ID of the security policy assigned to the DSA. 
+Este comando retornará o nome e o ID da política de segurança atribuída ao DSA.
 
 /opt/ds_agent/sendCommand --get GetConfiguration | grep SecurityProfile 
 
 ### Item D 
 
-This an example of the curl command that can be used to list Deep Security Roles via API 
+Este é um exemplo do comando Curl que pode ser usado para listar Security Roles via API
  
 curl -X GET $url/api/roles -H "api-secret-key: $secret" -H "api-version: v1" -k | json_pp 
-•	-k is used because the DSM is using a self-signed certificate  
-•	json_pp is used to display the output in JSON format 
+- -k é usado porque o DSM está usando um self-signed certificate  
+- json_pp é usado para exibir a saída no formato JSON
 
 
 </details>
@@ -327,17 +337,11 @@ curl -X GET $url/api/roles -H "api-secret-key: $secret" -H "api-version: v1" -k 
 <hr />
 
 <details>
-  <summary>:heart: AUTOMAÇÃO E MELHORES PRÁTICAS </summary>
-
-### Automatização:
-
-1.	Run script from https://github.com/postmanoy/Squad-Projects/blob/master/Dworks%20Scripts/policy-migrate-V1.py
-2.	Supply script requirements
-3.	Execute script
-4.	Login to Workload Security console and verify all configurations have been migrated
+  <summary>:100: AUTOMAÇÃO E MELHORES PRÁTICAS </summary>
 
 ## Best Practice: 
 
-•	After importing the Policies, make sure that communication direction is set to Agent-initiated (bidirectional communication may cause agent offline issues if Cloud One is unable to initiate a connection to the hosts specially when it uses private IP address). You can configure this at Policies > Double-click Policy > Settings > Communication Direction.
+- Depois de importar as políticas, cheque de que a <a href="https://cloudone.trendmicro.com/docs/workload-security/communication-manager-agent/#Configur"> direção da comunicação </a> esteja definida como Agent-initiated;
+- A comunicação bidirecional pode causar problemas de agentes offline se o Workload Security não for capaz de iniciar uma conexão com os hosts, especialmente quando usa um endereço IP privado;
 
 </details>
