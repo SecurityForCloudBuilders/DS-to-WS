@@ -8,11 +8,11 @@
 
 ## AVISO IMPORTANTE!
 
-<b> Esse repositório não é de maneira alguma uma documentação oficial suportada pela Trend Micro. Aqui estão alguns pontos de atenção considerados em algumas migrações já realizadas. 
+<b> Esse repositório não é oficial, criado, desenvolvido, afiliado, apoiado, mantido ou endossado pela organização Trend Micro. Aqui somente estão alguns pontos de atenção considerados em algumas migrações já realizadas. 
 
 Com esses pontos em mente, pode considerar quanto tempo e esforço levará para migrar o seu ambiente!
 
-Esse repositório não deve ser seguido caso você espere por suporte da Trend Micro. A documentação oficial será sempre a sua melhor amiga: :smile: </b>
+A documentação oficial será sempre a sua melhor amiga: :smile: </b>
 
 - https://cloudone.trendmicro.com/docs/workload-security/
 
