@@ -223,7 +223,7 @@ As roles devem ser criadas antes dos usuários para que uma role possa ser atrib
 
 ## Configurações Adicionais
 
-O Deep Security e o Workload Security têm várias configurações adicionais e opcionais que podem estar em uso. A recomendação é para revisar o uso dessas configurações e identificar aquelas que devem ser migradas.
+O Deep Security e o Workload Security têm várias configurações adicionais e opcionais que podem estar em uso. A recomendação é para revisar o uso dessas configurações e identificar aquelas que podem ser migradas.
 
 - Integrity monitoring auto-tagging 
 - Event Forwarding 
@@ -247,7 +247,7 @@ Esta seção se concentrará especificamente na conectividade do agente e não a
 
 ### Lista de permissões de URL na saída (proxy ou outro Network Edge Device)
 
-Todos os agentes exigirão, no mínimo, acesso aos seguintes URLs e portas 
+Os agentes exigirão, no mínimo, acesso aos seguintes URLs e portas 
 
 - agents.deepsecurity.trendmicro.com:443 
 - app.deepsecurity.trendmicro.com:443 
@@ -311,11 +311,9 @@ Este script foi projetado para facilitar a automação para a migração do agen
 1.	Desativar a instalação atual do agente
 2.	Reativar o agente no Workload Security com nova configuração
 
-Este é um Script de exemplo. Os scripts com mais detalhes serão criados pela console do Workload Security para cada grupo de computador / Security Policy / local de rede.
+Este é um Script de exemplo. <a href="https://cloudone.trendmicro.com/docs/workload-security/computers-add-deployment-scripts/#generate-a-deployment-script"> Os scripts </a> com mais detalhes serão criados pela console do Workload Security para cada grupo de computador / Security Policy / local de rede.
 
-Some details, such as security policy id or name, if migrated 1:1 from the Deep Security implementation, may be scripted into the new activation commands to reduce the number of script variations required across the environment. 
-
-Alguns detalhes, como <i> policyid </i> ou <i> policyname </i> da <i> groupid </i>, são opcionais e podem ser inseridos nos novos comandos de ativação para reduzir o número de variações de script necessárias em todo o ambiente.
+Alguns detalhes, como <i> policyid </i> ou <i> policyname </i> ou <i> groupid </i>, são opcionais e podem ser inseridos nos novos comandos de ativação para reduzir o número de variações de script necessárias em todo o ambiente.
 
 <strong> Outras configurações, como Proxy e Relay devem ser só usadas se estão implementadas no ambiente. </strong>
 
@@ -381,9 +379,9 @@ curl -X GET $url/api/roles -H "api-secret-key: $secret" -H "api-version: v1" -k 
 <hr />
 
 <details>
-  <summary>:100: AUTOMAÇÃO E MELHORES PRÁTICAS </summary>
+  <summary>:100: OBSERVAÇÕES </summary>
 
-## Best Practice: 
+## Observações: 
 
 - Depois de importar as políticas, cheque a <a href="https://cloudone.trendmicro.com/docs/workload-security/communication-manager-agent/#Configur"> direção da comunicação </a> e se está definida como Agent-initiated;
 - A comunicação bidirecional pode causar problemas de agentes offline se o Workload Security não for capaz de iniciar uma conexão com os hosts, especialmente quando usa um endereço de IP privado;
