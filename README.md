@@ -287,9 +287,11 @@ Este é um Script de exemplo. Os scripts com mais detalhes serão criados pela c
 
 Some details, such as security policy id or name, if migrated 1:1 from the Deep Security implementation, may be scripted into the new activation commands to reduce the number of script variations required across the environment. 
 
-Alguns detalhes, como name ou id da Security Policy, são opcionais e podem ser inseridos nos novos comandos de ativação para reduzir o número de variações de script necessárias em todo o ambiente.
+Alguns detalhes, como <i> policyid </i> ou <i> policyname </i> da <i> groupid </i>, são opcionais e podem ser inseridos nos novos comandos de ativação para reduzir o número de variações de script necessárias em todo o ambiente.
 
 <strong> Outras configurações, como Proxy e Relay devem ser só usadas se estão implementadas no ambiente. </strong>
+
+<strong> O exemplo abaixo serve para ser executado em máquinas Linux: </strong>
 
 /opt/ds_agent/dsa_control -r
 
@@ -303,7 +305,21 @@ RELAY_PROXY_ADDR_PORT='1.2.3.4:3128'
 
 /opt/ds_agent/dsa_control -y relay_proxy://$RELAY_PROXY_ADDR_PORT/ 
 
-/opt/ds_agent/dsa_control -a dsm://agents.deepsecurity.trendmicro.com:443/ "tenantID:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" "token: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx " "policyid:1" "policyname:mypolicy" "groupid:12345" 
+/opt/ds_agent/dsa_control -a dsm://agents.deepsecurity.trendmicro.com:443/ "tenantID:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" "token:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" "policyid:1" "policyname:mypolicy" "groupid:12345" 
+
+
+<strong> O exemplo abaixo serve para ser executado em máquinas Windows: </strong>
+
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -r
+
+Start-Sleep -s 50
+
+& $Env:ProgramFiles"\Trend Micro\Deep Security Agent\dsa_control" -a dsm://agents.deepsecurity.trendmicro.com:443/ "tenantID:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" "token:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" "policyid:1" "groupid:12345"
+
+
+<strong> No caso acima, não estamos configurando Proxy e Relay no agente </strong>
+
+<strong> Dependendo de como o seu ambiente está confirgurado, os comandos a seguir, podem necessitar serem executados como root </strong>
 
 ### Para recuperar o nome da Security Policy: 
 
@@ -341,7 +357,7 @@ curl -X GET $url/api/roles -H "api-secret-key: $secret" -H "api-version: v1" -k 
 
 ## Best Practice: 
 
-- Depois de importar as políticas, cheque de que a <a href="https://cloudone.trendmicro.com/docs/workload-security/communication-manager-agent/#Configur"> direção da comunicação </a> esteja definida como Agent-initiated;
-- A comunicação bidirecional pode causar problemas de agentes offline se o Workload Security não for capaz de iniciar uma conexão com os hosts, especialmente quando usa um endereço IP privado;
+- Depois de importar as políticas, cheque a <a href="https://cloudone.trendmicro.com/docs/workload-security/communication-manager-agent/#Configur"> direção da comunicação </a> e se está definida como Agent-initiated;
+- A comunicação bidirecional pode causar problemas de agentes offline se o Workload Security não for capaz de iniciar uma conexão com os hosts, especialmente quando usa um endereço de IP privado;
 
 </details>
