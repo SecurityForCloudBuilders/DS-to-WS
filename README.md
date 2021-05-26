@@ -2,6 +2,19 @@
 
 ## Alguns Pontos de Atenção ao Migrar o Deep Security On-Premise para o Cloud One Workload Security!
 
+<br />
+<hr />
+<br />
+
+## AVISO IMPORTANTE!
+
+<b> Esse repositório não é de maneira alguma uma documentação oficial suportada pela Trend Micro. Aqui estão alguns pontos de atenção considerados em algumas migrações já realizadas. 
+
+Esse repositório não deve ser seguido caso ocorra algum problema e espere por suporte da Trend Micro. A documentação oficial será sempre a sua melhor amiga: </b>
+
+- https://cloudone.trendmicro.com/docs/workload-security/
+
+<br />
 <hr />
 <br />
 
@@ -72,7 +85,7 @@ credenciais não podem. No caso de grandes volumes de conectores a serem migrado
 
 ## Migração dos Computer Groups 
 
-Os clientes podem exigir a segmentação dos sistemas para gerenciar o inventário do host ou controle de acesso aos sistemas. A estrutura do grupo pode ser copiada como está ou reestruturada conforme considerado apropriado pelo cliente. Se a estrutura de grupo existente for recriada como está no Workload Security, e se desejável para aliviar a carga de uma hierarquia de um grande grupo, este processo pode ser automatizado via <a href="https://cloudone.trendmicro.com/docs/workload-security/api-reference/tag/Computer-Groups"> API. </a>
+Pode ser exigido a segmentação dos sistemas para gerenciar o inventário do host ou controle de acesso aos sistemas. A estrutura do grupo pode ser copiada como está ou reestruturada conforme considerado apropriado por você. Se a estrutura de grupo existente for recriada como está no Workload Security, e se desejável para aliviar a carga de uma hierarquia de um grande grupo, este processo pode ser automatizado via <a href="https://cloudone.trendmicro.com/docs/workload-security/api-reference/tag/Computer-Groups"> API. </a>
   
 
 1.	Pesquise grupos existentes para migração.
