@@ -128,54 +128,67 @@ As Security Policies serão migradas do Deep Security para o Workload Security. 
 
 ### Migração Manual
 
-Esta seção irá detalhar algumas observações em itens de configuração a serem revisados ​​e migrados:
+Esta seção irá detalhar algumas observações em itens de configuração a serem revisados ​​e possivelmente migrados:
 
 ### Objects:
 
 1.	Security Policy Module configurations
 
-a.	Anti-Malware Module configurations
-  i.	Anti-Malware configuration
-  ii.	Anti-Malware scan schedule
-  iii.	Anti-Malware proxy configurations
-  iv.	Anti-Malware Directory Lists
-  v.	Anti-Malware File Lists
-  vi.	Anti-Malware File Extension Lists
+1.	Anti-Malware Module configurations
+2.	Anti-Malware configuration
+3.	Anti-Malware scan schedule
+4.	Anti-Malware proxy configurations
+5.	Anti-Malware Directory Lists
+6.	Anti-Malware File Lists
+7.	Anti-Malware File Extension Lists
 
+<br />
 
 - Anti-Malware Process Image File Lists
 
-  1.	Web Reputation Module configurations
-    a.	Web Reputation configuration
-    b.	Web Reputation Allowed lists
+<br />
 
+- Web Reputation Module configurations
+    - Web Reputation configuration
+    - Web Reputation Allowed lists
 - Web Reputation Blocked lists
+- Web Reputation proxy configurations
+- Application Control Module configuration
+  -   Global Rules
 
-  1.	Web Reputation proxy configurations
-  1.	Application Control Module configuration
-    a.	Global Rules
-  2.	Integrity Monitoring Module configurations
-    a.	Integrity Monitoring configuration
-    b.	Integrity Monitoring Rules assigned
-  3.	Log Inspection Module configurations
-    a.	Log Inspection configuration
-    b.	Log Inspection Rules assigned
-  4.	Firewall Module configurations
-    a.	Firewall Module configuration
-    b.	Firewall rules assigned
+<br />
+
+- Integrity Monitoring Module configurations
+  -   Integrity Monitoring configuration
+  -   Integrity Monitoring Rules assigned
+
+<br />
+
+- Log Inspection Module configurations
+  -   Log Inspection configuration
+  -   Log Inspection Rules assigned
+  -   Firewall Module configurations
+  -   Firewall Module configuration
+  -   Firewall rules assigned
+
+<br />
 
 - IP lists
 
-  1.	Port lists
-  2.	MAC lists
-  3.	Stateful Configurations
+- Port lists
+- MAC lists
+- Stateful Configurations
 
 - Interface Isolation Patterns
 - Contexts
 
-  1.	Intrusion Prevention configurations
-    a.	Intrusion Prevention configuration
-    b.	Intrusion Prevention rules assigned
+<br />
+
+- Intrusion Prevention configurations
+  -   Intrusion Prevention configuration
+  -   Intrusion Prevention rules assigned
+
+<br />
 
 - Application Type custom rules or customizations
 
