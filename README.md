@@ -13,8 +13,11 @@
 A documentação oficial será sempre a sua melhor amiga: :smile: 
 
 - https://cloudone.trendmicro.com/docs/workload-security/
+- https://help.deepsecurity.trendmicro.com/12_0/on-premise/migration.html
 
-Com esses pontos de atenção em mente, você pode ter uma estimativa de quanto tempo e esforço levará para migrar o seu ambiente! </b>
+Com esses pontos de atenção em mente, você pode ter uma estimativa de quanto tempo e esforço levará para migrar o seu ambiente! 
+
+Este Repositório está ARQUIVADO e possivelmente no momento que está lendo ele, a informação disponível aqui pode não estar mais correta/ atualizada/ valida com a tecnologia. Consulte a documentação oficial para mais e melhores informações </b>
 
 <br />
 <hr />
